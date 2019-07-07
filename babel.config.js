@@ -4,5 +4,8 @@ module.exports = {
     "@babel/preset-env",
     // responsável por alterar as funcionalidades do react que o navegador não entende, exemplo: jsx e etc...
     "@babel/preset-react"
+  ],
+  plugins: [
+    '@babel/plugin-proposal-class-properties'
   ]
 };
