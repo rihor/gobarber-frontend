@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        // expressão regular para achar arquivos javascript
+        // expressão regular/regex para achar arquivos javascript
         test: /.js$/,
         exclude: /node_modules/,
         use: {
@@ -29,6 +29,19 @@ module.exports = {
          * css-loader permite importações dentro do css
          */
         use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      },
+      {
+        /**
+         * regex para indetificar diferentes tipos de imagens
+         * '.*' = identifica qualquer número de caracteres
+         * '\.' = um ponto, literalmente
+         * 'e?' = o caractere 'e' é opcional
+         * '/i' = case insensitive
+         */
+        test: /.*\.(gif|png|jpe?g)$/i,
+        use: {
+          loader: 'file-loader'
+        }
       }
     ]
   }
